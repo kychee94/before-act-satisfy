@@ -1,0 +1,57 @@
+/*@tailwind base;*/
+/*@tailwind components;*/
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+:root{
+    --frontend-custom: #F16D34 !important;
+    --frontend-secondary: #1E1E1E !important;
+}
+
+body .v-btn--variant-elevated:not(.v-btn--loading,.v-btn--disabled).bg-primary:hover.scroll-to-top,
+.v-btn.scroll-to-top{
+    color: black !important;
+    background-color: var(--frontend-custom) !important;
+}
+
+.layout-wrapper.layout-nav-type-vertical .layout-navbar.navbar-blur:after,
+.layout-content-wrapper{
+    background: black !important;
+}
+
+.layout-navbar{
+    background: linear-gradient(#F1345A 0%, #F16D34 100%) !important;
+}
+
+.bg-frontend-primary{
+    background: var(--frontend-custom);
+}
+
+.text-frontend-primary{
+    color: var(--frontend-custom);
+}
+
+.border-frontend-primary{
+    border-color: var(--frontend-custom) !important;
+}
+
+.bg-frontend-secondary{
+    background: var(--frontend-secondary);
+}
+
+.text-frontend-secondary{
+    color: var(--frontend-secondary);
+}
+
+.border-frontend-secondary{
+    border-color: var(--frontend-secondary) !important;
+}
+
+.product-tag{
+    margin: 1px;
+    box-shadow: rgb(238, 77, 45) 0px 0px 0px 0.5px;
+    border-radius: 2px;
+}

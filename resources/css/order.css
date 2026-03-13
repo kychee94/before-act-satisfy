@@ -1,0 +1,241 @@
+.order-tabs {
+  display: flex;
+  border-bottom: 2px solid #f5f5f5;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.order-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.order-tab {
+  padding: 14px 30px;
+  cursor: pointer;
+  font-weight: 500;
+  color: #555;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.order-tab:hover {
+  color: #ee4d2d;
+}
+
+.order-tab.active {
+  color: #ee4d2d;
+  border-bottom: 3px solid #ee4d2d;
+}
+
+.order-card {
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: none;
+  border: 1px solid #f0f0f0;
+}
+
+/* HEADER */
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.order-ref {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+/* PRODUCT ROW */
+.order-product {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.product-meta {
+  font-size: 13px;
+  color: #888;
+  margin-top: 6px;
+}
+
+.product-total {
+  font-weight: 600;
+  color: #ee4d2d;
+}
+
+/* FOOTER */
+.order-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding-top: 15px;
+}
+
+.order-total {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.order-total span {
+  font-size: 18px;
+  font-weight: 700;
+  color: #ee4d2d;
+  margin-left: 6px;
+}
+
+.buy-again-btn {
+  align-self: flex-end;
+  background-color: #ee4d2d !important;
+  color: #fff !important;
+  border-radius: 4px;
+  box-shadow: none !important;
+}
+
+/* 💥 IMPORTANT — override Vuetify overlay */
+:deep(.buy-again-btn .v-btn__overlay) {
+  background-color: transparent !important;
+}
+
+:deep(.buy-again-btn:hover .v-btn__overlay) {
+  background-color: transparent !important;
+}
+
+/* SEARCH BAR FULL WIDTH */
+.order-search {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Wrapper to position icon */
+.order-search-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+/* Input */
+.order-search-input {
+  width: 100%;
+  padding: 12px 14px 12px 40px; /* left space for icon */
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+/* Focus effect */
+.order-search-input:focus {
+  border-color: #ee4d2d;
+}
+
+/* Icon inside input */
+.search-icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #999;
+}
+
+/* ===============================
+   MOBILE MODE (Shopee Style)
+================================= */
+@media (max-width: 768px) {
+
+  /* Reduce spacing */
+  .order-card {
+    padding: 12px;
+    border-radius: 0;
+    margin-bottom: 10px;
+  }
+
+  /* Smaller header */
+  .order-header {
+    padding-bottom: 10px;
+  }
+
+  .order-ref {
+    font-size: 12px;
+  }
+
+  /* Product row stacked tighter */
+  .order-product {
+    padding: 12px 0;
+  }
+
+  .product-image {
+    width: 60px;
+    height: 60px;
+    margin-right: 12px;
+  }
+
+  .product-name {
+    font-size: 13px;
+  }
+
+  .product-meta {
+    font-size: 12px;
+  }
+
+  .product-total {
+    font-size: 13px;
+  }
+
+  /* Footer like Shopee mobile */
+  .order-footer {
+    align-items: stretch;
+    padding-top: 10px;
+  }
+
+  .order-total {
+    text-align: right;
+    font-size: 13px;
+  }
+
+  .order-total span {
+    font-size: 16px;
+  }
+
+  .buy-again-btn {
+    width: auto;
+    align-self: flex-end;
+    margin-top: 8px;
+  }
+
+  /* Search bar compact */
+  .order-search-input {
+    padding: 10px 12px 10px 36px;
+    font-size: 13px;
+  }
+
+  .search-icon {
+    left: 10px;
+  }
+
+  .order-card {
+    border-left: none;
+    border-right: none;
+  }
+}

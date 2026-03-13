@@ -1,0 +1,20 @@
+{
+  "pagination": {
+    "showing": "Menunjukkan {start} hingga {end} daripada {total} entri"
+  },
+  "validation": {
+    "required": "Ruangan ini adalah wajib",
+    "email": "Ruangan e-mel mesti alamat e-mel yang sah",
+    "password": "Ruangan mesti mengandungi sekurang-kurangnya satu huruf besar, huruf kecil, aksara khas dan nombor dengan minimum 8 aksara",
+    "confirm_password": "Pengesahan kata laluan tidak sepadan",
+    "between": {
+      "numeric": "Masukkan nombor antara {min} dan {max}"
+    },
+    "integer": "Ruangan ini mesti nombor bulat",
+    "regex": "Format ruangan tidak sah",
+    "alpha": "Ruangan ini hanya boleh mengandungi huruf",
+    "url": "URL tidak sah",
+    "length": "Panjang aksara mesti {length} aksara",
+    "alpha-dash": "Aksara yang dimasukkan tidak sah"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "pagination": {
+    "showing": "Showing {start} to {end} of {total} entries"
+  },
+  "validation":{
+    "required": "This field is required",
+    "email": "The Email field must be a valid email",
+    "password": "Field must contain at least one uppercase, lowercase, special character and digit with min 8 chars",
+    "confirm_password": "The Confirm Password field confirmation does not match",
+    "between": {
+      "numeric": "Enter number between {min} and {max}"
+    },
+    "integer": "This field must be an integer",
+    "regex": "The Regex field format is invalid",
+    "alpha": "The Alpha field may only contain alphabetic characters",
+    "url": "URL is invalid",
+    "length": "The length of the Characters field must be {length} characters.",
+    "alpha-dash": "All Character are not valid"
+  }
+}

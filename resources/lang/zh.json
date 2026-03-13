@@ -1,0 +1,20 @@
+{
+  "pagination": {
+    "showing": "显示{start}至{end}，共{total}条"
+  },
+  "validation": {
+    "required": "此字段为必填项",
+    "email": "电子邮箱字段必须是有效的邮箱地址",
+    "password": "字段必须至少包含一个大写字母、小写字母、特殊字符和数字，且最少 8 个字符",
+    "confirm_password": "确认密码与原密码不匹配",
+    "between": {
+      "numeric": "请输入介于{min}和{max}之间的数字"
+    },
+    "integer": "此字段必须是整数",
+    "regex": "字段格式无效",
+    "alpha": "该字段只能包含字母",
+    "url": "URL 无效",
+    "length": "字符长度必须为{length}个字符",
+    "alpha-dash": "包含的字符无效"
+  }
+}

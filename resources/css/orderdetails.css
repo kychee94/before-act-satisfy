@@ -1,0 +1,396 @@
+.order-detail-wrapper {
+  padding: 20px;
+}
+
+/* HEADER BAR */
+.order-detail-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+}
+
+/* LEFT SIDE */
+.header-left {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #555;
+  transition: 0.2s;
+}
+
+.header-left:hover {
+  color: #ee4d2d;
+}
+
+.back-text {
+  font-weight: 500;
+}
+
+/* RIGHT SIDE */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.order-id {
+  font-weight: 500;
+}
+
+.divider {
+  color: #ccc;
+}
+
+.order-status {
+  font-weight: 600;
+  color: #999;
+}
+
+/* STATUS COLORS */
+.order-status.completed {
+  color: #28a745;
+}
+
+.order-status.cancelled {
+  color: #dc3545;
+}
+
+.order-date {
+  font-size: 13px;
+  color: #888;
+}
+
+.order-cancelled {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #dc3545;
+  font-weight: 700;
+  padding: 20px 0;
+  justify-content: center;
+}
+
+.order-detail-product {
+  display: flex;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.product-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 15px;
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-name {
+  font-weight: 500;
+}
+
+.product-meta {
+  font-size: 13px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.product-total {
+  font-weight: 600;
+  color: #666666;
+}
+
+/* ==========================
+   ORDER PROGRESS FLOW
+========================== */
+
+.order-progress {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  margin: 40px 0;
+  padding: 0 20px;
+}
+
+.progress-step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+
+.progress-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #f3f3f3;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 3; /* ensure above line */
+  transition: 0.3s ease;
+}
+
+.progress-circle.active {
+  background: #fff;
+  border: 2px solid #28a745;
+  color: #28a745;
+}
+
+.progress-line {
+  position: absolute;
+  top: 20px;
+  right: -50%;
+  width: 100%;
+  height: 3px;
+  background: #ddd;
+  z-index: 1;
+}
+
+.progress-line.active {
+  background: #28a745;
+}
+
+.progress-label {
+  margin-top: 10px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.progress-date {
+  font-size: 12px;
+  color: #888;
+  margin-top: 4px;
+}
+
+/* ==========================
+   DELIVERY SECTION
+========================== */
+
+.delivery-section {
+  display: flex;
+  background: #fff;
+  padding: 25px 0;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.delivery-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+
+  background: repeating-linear-gradient(
+    90deg,
+    #ee4d2d 0px,
+    #ee4d2d 40px,
+    transparent 40px,
+    transparent 55px,
+    #2f80ed 55px,
+    #2f80ed 95px,
+    transparent 95px,
+    transparent 110px
+  );
+}
+
+.delivery-left {
+  flex: 1;
+  padding-right: 30px;
+}
+
+.delivery-title {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.delivery-name {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.delivery-divider {
+  width: 1px;
+  background: #e5e5e5;
+  margin: 0 30px;
+}
+
+.delivery-right {
+  flex: 1;
+  font-size: 14px;
+  color: #666;
+}
+
+.order-summary {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+/* the row */
+.summary-row.total {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #ee4d2d;
+}
+
+/* the vertical line AFTER Total */
+.total-label {
+  padding-right: 16px;
+  border-right: 2px solid #eee;
+  color: #333;
+  font-weight: 600;
+}
+
+/* amount */
+.total-amount {
+  min-width: 140px;
+  text-align: right;
+}
+
+/* ========================== MOBILE (Shopee style) ========================== */ 
+@media (max-width: 768px) 
+{ 
+    .order-detail-wrapper { 
+        padding: 0px; 
+    } 
+    
+    /* HEADER */ 
+    .order-detail-header {
+        flex-direction: row;          /* ⬅ one line */
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    /* BACK BUTTON = only icon */
+    .back-text {
+        display: none;                /* ⬅ hide BACK text */
+    }
+
+    .header-left {
+        font-size: 0;                 /* removes text spacing */
+    }
+
+    /* reduce icon spacing */
+    .header-left .v-icon {
+        margin-right: 0;
+    }
+
+    /* ORDER ID + STATUS take full width */
+    .header-right {
+        flex: 1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left: 8px;             /* space after arrow */
+    }
+
+    /* optional: make order id truncate nicely */
+    .order-id {
+        font-size: 13px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    /* ================= PROGRESS FLOW ================= */ 
+    .order-progress {
+        flex-direction: column;
+        align-items: flex-start;   /* ⬅ align whole flow to left */
+        margin: 25px 0;
+        padding: 0;
+    }
+
+    /* each step row */
+    .progress-step {
+        display: flex;
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+        gap: 12px;
+        padding-bottom: 26px;
+        position: relative;
+    }
+
+    /* icon */
+    .progress-circle {
+        width: 34px;
+        height: 34px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    /* vertical line under icon */
+    .progress-line {
+        position: absolute;
+        left: 17px;        /* center of circle */
+        top: 34px;
+        width: 2px;
+        height: calc(100% - 6px);
+        transform: none;
+    }
+
+    /* ================= DELIVERY SECTION ================= */ 
+    .delivery-section { 
+        flex-direction: column;
+        gap: 16px; 
+        padding: 20px 0; 
+    } 
+    
+    .delivery-divider { 
+        display: none; 
+    } 
+    
+    /* ================= PRODUCT LIST ================= */ 
+    .order-detail-product { 
+        align-items: flex-start; 
+        gap: 10px;
+    } 
+    
+    .product-image { 
+        width: 65px; 
+        height: 65px; 
+    } 
+    
+    .product-name { 
+        font-size: 14px; 
+    } 
+    
+    .product-meta { 
+        font-size: 12px; 
+    } 
+    
+    .product-total { 
+        font-size: 14px; 
+        white-space: nowrap; 
+    } 
+    
+    /* ================= TOTAL SECTION ================= */ 
+    .order-summary { 
+        justify-content: stretch; 
+    } 
+    
+    .summary-row.total { 
+        width: 100%; 
+        justify-content: space-between; 
+        font-size: 16px; 
+    } 
+    
+    .total-amount { 
+        min-width: auto; 
+    } }

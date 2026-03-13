@@ -1,0 +1,60 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+      - "5173:5173"
+    volumes:
+      - .:/var/www
+      - /var/www/node_modules 
+      - /var/www/vendor 
+    working_dir: /var/www
+    command: >
+      sh -c "composer install --no-interaction &&
+             npm install &&
+             php artisan key:generate --no-interaction &&
+             php artisan migrate --force &&
+             php artisan serve --host=0.0.0.0 --port=8000 &
+             npm run dev -- --host"
+    environment:
+      - APP_ENV=local
+      - DB_HOST=db
+      - DB_DATABASE=announcekit
+      - DB_USERNAME=announcekit
+      - DB_PASSWORD=secret
+    depends_on:
+      db:
+        condition: service_healthy
+
+  db:
+    image: mysql:8.0
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: announcekit
+      MYSQL_USER: announcekit
+      MYSQL_PASSWORD: secret
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - "8080:80"
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
+      - MYSQL_ROOT_PASSWORD=root
+    depends_on:
+      - db
+
+volumes:
+  db_data:
