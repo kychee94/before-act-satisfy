@@ -8,3 +8,24 @@ select `announcement`.`uuid` as `uuid`, `announcement`.`title` as `title`, `anno
 
 # Q3
 Run command "docker compose exec app php artisan read:announcement" and input the prompt values respectively
+
+AI assist:
+- Setting up projects in docker environment. 
+- Troubleshoot errors.
+
+Keynotes:
+- Project layout(Q2) is done using Vuexy template from themeforest.
+- Techstack used: Laravel 12 + InertiaJS.
+- Total timespent:
+	- Q4 Setting up environment (4 hours)
+	- Q1 (10 minutes)
+	- Q2 (2 hours)
+	- Q3 (10 minutes)
+
+Credentials:
+- mysql database
+	- username: announcekit
+	- password: secret
+- customer login (Q2)
+	- username: customera
+	- password: 123456
