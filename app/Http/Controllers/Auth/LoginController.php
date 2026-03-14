@@ -8,7 +8,7 @@ use App\Helpers\Helper;
 use Inertia\Inertia;
 use App\Http\Controllers\Controller;
 
-use App\Models\User;
+use App\Models\Customer;
 
 use Auth;
 use Log;
@@ -21,7 +21,7 @@ class LoginController extends Controller
     {
         $validator = Validator::make($request->all(),
             [
-                'username' => 'required|email',
+                'username' => 'required',
                 'password' => 'required',
             ]
         );
@@ -35,26 +35,12 @@ class LoginController extends Controller
 
         $ip = $request->ip();
 
-        //attemps login
-        if (Auth::attempt($credentials) == false) {
+        // attempt login
+        if (Auth::guard('customer')->attempt($credentials) == false) {
             return back()->with('msg-class', 'error')->withErrors(['username' => trans('Invalid username or password')])->with('msg', trans('string.Invalid username or password'));
         }
 
         $request->session()->regenerate();
-
-        $user = Auth::user();
-
-        DB::beginTransaction();
-        $token = md5(date('Y-m-d H:i:s')) . uniqid();
-
-        // save uniqueid
-        User::where('id', $user->id)
-            ->update([
-                'uniqueid' => $token,
-                'last_login' => date('Y-m-d H:i:s')
-            ]);
-        
-        DB::commit();
 
         return redirect()->intended(route('home'));
     }
