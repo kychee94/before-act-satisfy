@@ -34,7 +34,7 @@ const updateItemPerPage = value => {
 
     <div class="d-flex align-center justify-sm-space-between justify-center flex-wrap gap-3 px-6 py-3">
       <div class="d-flex align-center gap-2">
-        <span class="text-sm">{{$t('Items per page')}}:</span>
+        <span class="text-sm">Items per page:</span>
         <v-select
           :items="[5, 10, 25, 50, 100]"
           :model-value="itemsPerPage"

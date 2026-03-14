@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Models;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\SoftDeletes; 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -8,13 +9,22 @@ use Illuminate\Support\Str;
 use Log;
 use DB;
 
-class Customer extends Model
+class Customer extends Authenticatable
 {
     protected $table = 'customer';
     
     protected $guarded = [];
 
     use SoftDeletes;
+    
+    /**
+     * The attributes that should be hidden for serialization.
+     *
+     * @var array<int, string>
+     */
+    protected $hidden = [
+        'password',
+    ];
 
     const
         CODE_STATUS_ACTIVE = 1,
